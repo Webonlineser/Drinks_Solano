@@ -1,0 +1,474 @@
+/* ============================================================
+   STYLES.CSS — Drinks Solano
+   Estilo: Elegante (Negro + Dorado + Rosa Neón Brillante)
+   Autor: Oliver / Usuario
+   Notas:
+     - Mobile-first
+     - Fuentes sugeridas: Cinzel + Poppins
+     - Paleta principal declarada como variables
+   ============================================================ */
+
+/* ============================
+   VARIABLES DE COLOR / TIPOGRAFÍA
+   ============================ */
+:root {
+  --negro: #000000;
+  --dorado: #d4af37;
+  --rosa-neon: #ff4bf0;
+  --blanco: #ffffff;
+  --gris: #e5e5e5;
+
+  --font-title: 'Cinzel', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Efecto glow rosado */
+  --glow-rosa: 0 0 10px #ff4bf0, 0 0 25px #ff4bf0;
+}
+
+/* ============================
+   RESET BÁSICO
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Contenedor reutilizable para centrar */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ============================
+   HEADER / NAV
+   ============================ */
+.header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--dorado);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+/* LOGO */
+#logo-image {
+  width: 80px;
+  height: auto;
+}
+
+/* MENU HAMBURGUESA — mobile */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 28px;
+  height: 3px;
+  background: var(--dorado);
+  transition: 0.3s;
+}
+
+/* NAV LISTA */
+.nav {
+  display: none;
+}
+
+.nav.nav-open {
+  display: block;
+}
+
+.nav-list {
+  list-style: none;
+  text-align: right;
+}
+.hero-list{
+    list-style : none;
+}
+.nav-link {
+  display: block;
+  padding: 10px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--blanco);
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+
+
+.nav-link:hover {
+  color: var(--rosa-neon);
+  text-shadow: var(--glow-rosa);
+}
+
+/* ============================
+   HERO
+   ============================ */
+.hero {
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  min-height: 75vh;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+.site-title {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.site-title-accent {
+  color: var(--dorado);
+  text-shadow: 0 0 5px var(--dorado), 0 0 15px var(--dorado);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--gris);
+  margin-top: 12px;
+}
+
+.hero-cta .btn {
+  margin: 10px;
+}
+
+/* IMAGEN HERO */
+.hero-media img {
+
+  width: 80%;
+  border-radius: 12px;
+  
+}
+
+.pedido-wsp {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff15;
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ff006655;
+}
+
+.pedido-wsp h3 {
+  text-align: center;
+  color: #ff1464;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.pedido-wsp textarea {
+  width: 100%;
+  height: 120px;
+  border: 2px solid #ff4780;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  outline: none;
+  resize: none;
+  background: #ffffffaa;
+}
+
+.pedido-wsp textarea:focus {
+  border-color: #ff0066;
+}
+
+.pedido-wsp button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  font-size: 17px;
+  background: #ff0066;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.pedido-wsp button:hover {
+  background: #ff0055;
+  transform: scale(1.03);
+}
+
+
+/* ============================
+   BOTONES
+   ============================ */
+.btn {
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--dorado);
+  color: var(--negro);
+}
+
+.btn-primary:hover {
+  background: var(--rosa-neon);
+  color: var(--negro);
+  box-shadow: var(--glow-rosa);
+}
+
+.btn-outline {
+  border: 2px solid var(--dorado);
+  color: var(--dorado);
+}
+
+.btn-outline:hover {
+  background: var(--dorado);
+  color: var(--negro);
+}
+
+/* ============================
+   SECCIÓN CARTA
+   ============================ */
+.menu-section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--dorado);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-desc {
+  text-align: center;
+  color: var(--gris);
+  margin-bottom: 30px;
+}
+
+/* BOTONES DE CATEGORÍA */
+.menu-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.filter-btn {
+  background: none;
+  border: 2px solid var(--dorado);
+  color: var(--dorado);
+  padding: 10px 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--dorado);
+  color: var(--negro);
+}
+
+/* GRID DE ITEMS */
+.menu-grid {
+  display: none;
+}
+
+.menu-grid.active {
+  display: block;
+}
+
+.menu-category {
+  font-family: var(--font-title);
+  color: var(--dorado);
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+}
+
+.menu-list {
+  list-style: none;
+  display: grid;
+  gap: 15px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid var(--dorado);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  border-color: var(--rosa-neon);
+  box-shadow: var(--glow-rosa);
+}
+
+.menu-item-title {
+  color: var(--blanco);
+  font-size: 1.2rem;
+}
+
+.menu-item-price {
+  color: var(--dorado);
+  font-weight: bold;
+}
+
+/* ============================
+   CONTACTO
+   ============================ */
+.contact-section {
+  padding: 60px 0;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 35px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: var(--dorado);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dorado);
+  background: #111;
+  color: var(--blanco);
+}
+
+.contact-info h3 {
+  color: var(--rosa-neon);
+  text-shadow: var(--glow-rosa);
+  margin-bottom: 8px;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+.site-footer {
+  border-top: 1px solid var(--dorado);
+  padding: 25px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer-credit {
+  color: var(--gris);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+/* ============================
+   TABLET (≥ 768px)
+   ============================ */
+@media (min-width: 768px) {
+  /* MENU DESKTOP MEDIO */
+  .nav {
+    display: block !important;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .hero-inner {
+    text-align: left;
+  }
+
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-media {
+    flex: 1;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================
+   DESKTOP (≥ 1024px)
+   ============================ */
+@media (min-width: 1024px) {
+
+  .site-title {
+    font-size: 3rem;
+  }
+
+  .menu-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+}

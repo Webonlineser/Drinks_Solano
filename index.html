@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!--
+    index.html - Drinks Solano
+    Autor: Oliver / Usuario
+    Descripción: Página principal para emprendimiento "Drinks Solano".
+    Notas: - Reemplazar "assets/logo.png" por el archivo real del logo.
+           - El diseño final (negro/dorado/rosa) se implementa en CSS.
+           - Este archivo incluye hooks (IDs/classes) para JS y CSS.
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Drinks Solano - tragos preparados. Elegancia en cada sorbo. Carta y contacto." />
+
+  <title>Drinks Solano — The world is your</title>
+
+  <!-- Favicon (reemplazar si querés) -->
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- TIP: link a tu CSS aquí (ej: css/styles.css) -->
+  <link rel="stylesheet" href="/main .css" />
+  
+  <!-- Fuentes sugeridas:
+       - Podés usar Google Fonts o cargar una tipografía similar a la de Caesar Palace si la tenés.
+       - Para mockup, usaré 'Cinzel' o 'Playfair Display' en CSS. 
+       (El CSS definitivo lo agregamos después)
+  -->
+</head>
+<body>
+  <!-- ============================
+       NAV / HEADER
+       ============================ -->
+  <header id="site-header" class="header">
+    <!-- Barra superior con logo y nav -->
+    <div class="container header-inner">
+      <!-- LOGO: reemplazar la imagen por la versión con la estatua y tipografía -->
+      <!-- Nota: la imagen del logo debe incluir el texto "drinks" (arriba),
+           "The world is your" y "solano" en dorado como indicaste. -->
+      <a href="#home" class="logo-link" aria-label="Drinks Solano - Ir al inicio">
+        <img src="/asset/logo.jpg.png" alt="Drinks Solano - logo" id="logo-image" />
+      </a>
+
+      <!-- Botón hamburguesa para móvil -->
+      <button id="nav-toggle" class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Navegación principal -->
+      <nav id="main-nav" class="nav" role="navigation" aria-label="Menú principal">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#carta" class="nav-link">Carta</a></li>
+          <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================
+       HERO / HOME
+       ============================ -->
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-inner container">
+        <!-- Hero left: texto -->
+        <div class="hero-content">
+          <!-- H1 principal: usar tipografía elegante -->
+          <h1 class="site-title">Drinks <span class="site-title-accent">Solano</span></h1>
+          <p class="hero-subtitle">Los mejores tragos de zona sur.</p>
+          <p class="hero-subtitle">horario de atencion: 21:00 a 03:00</p>
+
+          <!-- CTA para ver la carta -->
+          <div class="hero-cta">
+            <a href="#carta" class="btn btn-primary">Ver carta</a>
+            <a href="#contacto" class="btn btn-outline">Hacer pedido</a>
+          </div>
+
+          <!-- Información corta -->
+          <ul class="hero-list">
+            <li>Tragos preparados</li>
+            <li>Presentaciones elegantes</li>
+            <li>Envíos y eventos</li>
+          </ul>
+        </div>
+
+        <!-- Hero right: imagen decorativa / mockup del logo o botella -->
+        <div class="hero-media">
+          <!-- placeholder: podés cambiar por una foto de producto -->
+          <img src="/asset/trago_1.png" alt="Trago destacado de Drinks Solano"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         SECCIÓN: CARTA (principales categorías)
+         ============================ -->
+    <section id="carta" class="menu-section">
+      <div class="container">
+        <h2 class="section-title">Carta</h2>
+        <p class="section-desc">Seleccioná una categoría para ver los tragos.</p>
+
+        <!-- Filtros o botones de categorías (JS los controla) -->
+        <div class="menu-filters" role="tablist" aria-label="Categorias de la carta">
+          <!-- Cada botón activa la vista de su categoría -->
+          <button class="filter-btn active" data-target="caipis" role="tab" aria-selected="true">Caipis</button>
+          <button class="filter-btn" data-target="daikiris" role="tab" aria-selected="false">Daikiri</button>
+          <button class="filter-btn" data-target="cream" role="tab" aria-selected="false">Cream Frozen</button>
+          <button class="filter-btn" data-target="tropicales" role="tab" aria-selected="false">Tropicales</button>
+          <button class="filter-btn" data-target="gin" role="tab" aria-selected="false">Gin Tonics</button>
+        </div>
+
+        <!-- Contenedor de categorías (cada .menu-grid es una categoría independiente) -->
+        <div class="menu-container">
+          <!-- ============================
+               CAIPIS (categoria: caipis)
+               ============================ -->
+          <div id="caipis" class="menu-grid active" role="tabpanel">
+            <h3 class="menu-category">Caipis</h3>
+            <p class="menu-category-desc">Clásicas y versiones creativas a base de caipirinha / caipiroska.</p>
+
+            <ul class="menu-list">
+              <!-- Item: Caiporka clásica -->
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Caipiroska clásica</h4>
+                  <p class="menu-item-desc">Lima, azúcar, vodka , Sprite.</p>
+                </div>
+                <div class="menu-item-right">
+                  <span class="menu-item-price">$8.000</span>
+                </div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Capibosque</h4>
+                  <p class="menu-item-desc">Vodka , Lima , Sprite y Frutos del bosque</p>
+                </div>
+                <div class="menu-item-right">
+                  <span class="menu-item-price">$8.000</span>
+                </div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Caipifrut</h4>
+                  <p class="menu-item-desc">Vodka, lima ,Sprite y Frutos Rojos.</p>
+                </div>
+                <div class="menu-item-right">
+                  <span class="menu-item-price">$8.000</span>
+                </div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Capiblue</h4>
+                  <p class="menu-item-desc">Vodka, lima , Power Azul.</p>
+                </div>
+                <div class="menu-item-right">
+                  <span class="menu-item-price">$8.000</span>
+                </div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Caipi Mango Loco</h4>
+                  <p class="menu-item-desc">Vodka , Lima , Monster Mango loco.</p>
+                </div>
+                <div class="menu-item-right">
+                  <span class="menu-item-price">$8.500</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ============================
+               DAIKIRIS FRUTALES (categoria: daikiris)
+               ============================ -->
+          <div id="daikiris" class="menu-grid" role="tabpanel" hidden>
+            <h3 class="menu-category">Daikiri frutales</h3>
+            <p class="menu-category-desc">Clásicos daikiris con fruta natural.</p>
+
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Daikiri Frutilla</h4>
+                  <p class="menu-item-desc">Ron ,pulpa de Frutilla, azucar.</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$8500</span></div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Daikiri Ananá</h4>
+                  <p class="menu-item-desc">Ron ,pulpa de Ananá, azucar.</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$8500</span></div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Daikiri Durazno</h4>
+                  <p class="menu-item-desc">Ron ,pulpa de Durazno, azucar.</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$8500</span></div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Daikiri Pico Dulce</h4>
+                  <p class="menu-item-desc">Ron ,pulpa de Ananá y Uva , chupetines pico dulce, azucar.</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$8500</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ============================
+               CREAM FROZEN (categoria: cream)
+               ============================ -->
+          <div id="cream" class="menu-grid" role="tabpanel" hidden>
+            <h3 class="menu-category">Cream Frozen</h3>
+            <p class="menu-category-desc">Tragos-crema tipo postre, servidos frozen.</p>
+
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Cream Frozen Bonobon</h4>
+                  <p class="menu-item-desc">Bonobon, leche, azucar y ron.</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$9.000</span></div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Cream Frozen Oreo</h4>
+                  <p class="menu-item-desc">Oreo, leche, azucar y ron..</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$9.000</span></div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Cream Frozen Alfajor Rasta</h4>
+                  <p class="menu-item-desc">Alfajor rasta , leche, azucar y ron..</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$9.000</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ============================
+               TROPICALES / ESPECIALES (categoria: tropicales)
+               ============================ -->
+          <div id="tropicales" class="menu-grid" role="tabpanel" hidden>
+            <h3 class="menu-category">Tropicales / Especiales</h3>
+            <p class="menu-category-desc">Tragos con base tropical y presentaciones únicas.</p>
+
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Oso Yogi</h4>
+                  <p class="menu-item-desc">Piña colada estilo especial — cremoso y fresco.</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$8.000</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ============================
+               GIN TONICS (categoria: gin)
+               ============================ -->
+          <div id="gin" class="menu-grid" role="tabpanel" hidden>
+            <h3 class="menu-category">Gin Tonics</h3>
+            <p class="menu-category-desc">Versiones de gin con sabores frutales.</p>
+
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Gin - Frutos Rojos</h4>
+                  <p class="menu-item-desc">Gin , Tonica , Frutos Rojos.</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$8.500</span></div>
+              </li>
+
+              <li class="menu-item">
+                <div class="menu-item-left">
+                  <h4 class="menu-item-title">Gin - Flimpaff</h4>
+                  <p class="menu-item-desc">Gin Flynn paff , tonica .</p>
+                </div>
+                <div class="menu-item-right"><span class="menu-item-price">$8.500</span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         SECCIÓN: CONTACTO / RESERVAS
+         ============================ -->
+    <section id="contacto" class="contact-section">
+      <!-- FORMULARIO PARA PEDIR POR WHATSAPP -->
+<div class="pedido-wsp">
+  <h3>Hacé tu pedido</h3>
+  
+  <textarea id="mensaje" placeholder="Ej: Realiza tu pedido directo a Drinks Solano."></textarea>
+
+  <button id="btnEnviar">Enviar por WhatsApp</button>
+</div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year"></span> Drinks Solano </p>
+      <p class="footer-credit">By Nico Gomez</p>
+    </div>
+  </footer>
+
+  <!-- ============================
+       SCRIPTS (JS básico para interacciones)
+       ============================ -->
+
+
+<script>
+  const numero = "1157053213"; // Número real del dueño
+
+  document.getElementById("btnEnviar").addEventListener("click", () => {
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    if (mensaje === "") {
+      alert("Por favor escribí tu pedido.");
+      return;
+    }
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+  });
+</script>
+
+
+
+
+
+  <script>
+    
+    /* 
+      scripts inline - funciones básicas:
+      - Toggle menú mobile
+      - Filtros de la carta: mostrar/ocultar categorías
+      - Insertar año actual en footer
+      NOTA: Para proyectos reales, mover a archivo externo js/main.js
+    */
+
+    // ********** AÑO dinámico en el footer **********
+    (function setCurrentYear(){
+      const y = new Date().getFullYear();
+      const yearEl = document.getElementById('current-year');
+      if(yearEl) yearEl.textContent = y;
+    })();
+
+    // ********** Toggle navegación móvil **********
+    (function mobileNavToggle(){
+      const btn = document.getElementById('nav-toggle');
+      const nav = document.getElementById('main-nav');
+      if(!btn || !nav) return;
+
+      btn.addEventListener('click', function(){
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('nav-open');
+      });
+    })();
+
+    // ********** Filtrado de categorías de la carta **********
+    (function menuFilters(){
+      const buttons = document.querySelectorAll('.filter-btn');
+      const panels = document.querySelectorAll('.menu-grid');
+
+      function showPanel(id){
+        panels.forEach(panel => {
+          if(panel.id === id){
+            panel.classList.add('active');
+            panel.removeAttribute('hidden');
+          } else {
+            panel.classList.remove('active');
+            panel.setAttribute('hidden', '');
+          }
+        });
+
+        buttons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.target === id);
+          btn.setAttribute('aria-selected', String(btn.dataset.target === id));
+        });
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function(){
+          const target = this.dataset.target;
+          if(!target) return;
+          showPanel(target);
+          // voluntario: hacer scroll a la carta
+          const cartaSection = document.getElementById('carta');
+          if(cartaSection) cartaSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+        });
+      });
+
+      // Estado inicial: mostrar primer panel (el que tenga la clase active)
+      const activeBtn = document.querySelector('.filter-btn.active');
+      const initialTarget = activeBtn ? activeBtn.dataset.target : (buttons[0] && buttons[0].dataset.target);
+      if(initialTarget) showPanel(initialTarget);
+    })();
+
+    // ********** Formulario (simulación simple) **********
+    (function contactFormHandler(){
+      const form = document.getElementById('contact-form');
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // En producción: enviar a backend o servicio (email/Sheets/WhatsApp API)
+        alert('Gracias! Tu mensaje fue enviado (simulación). Reemplazar este handler por envío real.');
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
